@@ -1,8 +1,8 @@
+import mysql.connector
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
-import mysql.connector
 
 # Pengaturan halaman Streamlit
 st.set_page_config(page_title="Pendapatan per Departemen", layout="wide")
