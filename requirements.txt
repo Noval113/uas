@@ -1,2 +1,5 @@
-mysqlclient==2.2.4
-SQLAlchemy==2.0.25
+streamlit
+mysql-connector-python
+pandas
+matplotlib
+seaborn
