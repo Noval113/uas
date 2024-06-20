@@ -3,15 +3,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
-import os
-import logging
-from dotenv import load_dotenv
-
-# Memuat variabel lingkungan dari file .env
-load_dotenv()
-
-# Mengatur logging
-logging.basicConfig(level=logging.DEBUG)
 
 # Pengaturan halaman Streamlit
 st.set_page_config(page_title="Pendapatan per Departemen", layout="wide")
@@ -19,25 +10,13 @@ st.set_page_config(page_title="Pendapatan per Departemen", layout="wide")
 # Membuat judul aplikasi
 st.title("Analisis Pendapatan per Departemen")
 
-# Mendapatkan variabel lingkungan untuk koneksi database
-host = os.getenv('DB_HOST', 'localhost')
-user = os.getenv('DB_USER', 'root')
-password = os.getenv('DB_PASSWORD', '')
-database = os.getenv('DB_NAME', 'dump_dw')
-
-try:
-    # Mengatur koneksi ke database
-    db_connection = mysql.connector.connect(
-        host=host,
-        user=user,
-        password=password,
-        database=database
-    )
-    st.success("Berhasil terhubung ke database")
-except mysql.connector.Error as err:
-    st.error(f"Error: {err}")
-    logging.error(f"Error: {err}")
-    st.stop()
+# Mengatur koneksi ke database
+db_connection = mysql.connector.connect(
+    host="localhost",          # Host dari server MySQL Anda
+    user="root",               # Username MySQL Anda
+    password="",               # Password MySQL Anda
+    database="dump_dw"         # Nama database yang ingin Anda gunakan
+)
 
 # Membuat cursor
 cursor = db_connection.cursor()
