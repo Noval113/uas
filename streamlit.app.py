@@ -5,6 +5,10 @@ import seaborn as sns
 import streamlit as st
 import os
 import logging
+from dotenv import load_dotenv
+
+# Memuat variabel lingkungan dari file .env
+load_dotenv()
 
 # Mengatur logging
 logging.basicConfig(level=logging.DEBUG)
