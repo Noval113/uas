@@ -4,3 +4,5 @@ pandas
 matplotlib
 seaborn
 python-dotenv
+mysqlclient==2.2.4
+SQLAlchemy==2.0.25
